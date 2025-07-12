@@ -1,8 +1,8 @@
-# 🏢 Application de Gestion des Clients
+# Application de Gestion des Clients
 
 Une application web backend moderne développée avec **Express.js** pour gérer une liste de clients via une API REST JSON.
 
-## 🚀 Démarrage rapide
+## Démarrage rapide
 
 ```bash
 # Installation
@@ -70,17 +70,17 @@ curl -X DELETE http://localhost:3000/api/clients/1
 └── README.md
 ```
 
-## 🛠️ Technologies
+## Technologies
 
 - **Backend**: Node.js + Express.js
 - **Frontend**: HTML5, CSS3, JavaScript
 - **Design**: Glassmorphism, CSS Grid, Animations
 - **Stockage**: Mémoire (tableau JavaScript)
 
-## 📋 Fonctionnalités
+## Fonctionnalités
 
 - ✅ API REST complète (GET, POST, DELETE)
-- ✅ Interface premium avec glassmorphism
+- ✅ Interface moderne
 - ✅ Micro-animations et effets de hover
 - ✅ Icônes SVG optimisées
 - ✅ Design responsive et accessible
@@ -93,4 +93,4 @@ curl -X DELETE http://localhost:3000/api/clients/1
 
 ---
 
-**🚀 Prêt !** Ouvrez `http://localhost:3000` pour commencer.
+**Prêt !** Ouvrez `http://localhost:3000` pour commencer.
