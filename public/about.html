@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestion des Clients - À propos</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="nav-container">
+          <h1>🏢 Gestion des Clients</h1>
+          <ul>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/clients">Clients</a></li>
+            <li><a href="/about" class="active">À propos</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        <section class="about-section">
+          <h2>À propos de l'application</h2>
+
+          <div class="about-content">
+            <div class="about-card">
+              <h3>📋 Description</h3>
+              <p>
+                Cette application de gestion des clients est une solution simple
+                et efficace développée avec Express.js. Elle permet de gérer une
+                liste de clients avec des opérations CRUD basiques.
+              </p>
+            </div>
+
+            <div class="about-card">
+              <h3>🛠️ Technologies utilisées</h3>
+              <ul>
+                <li><strong>Backend:</strong> Node.js avec Express.js</li>
+                <li>
+                  <strong>Frontend:</strong> HTML5, CSS3, JavaScript vanilla
+                </li>
+                <li><strong>Stockage:</strong> Mémoire (tableau JavaScript)</li>
+                <li><strong>API:</strong> REST JSON</li>
+              </ul>
+            </div>
+
+            <div class="about-card">
+              <h3>🔌 API REST</h3>
+              <p>
+                L'application expose une API REST complète pour la gestion des
+                clients :
+              </p>
+              <div class="api-endpoints">
+                <div class="endpoint">
+                  <code>GET /api/clients</code>
+                  <span>Récupère la liste complète des clients</span>
+                </div>
+                <div class="endpoint">
+                  <code>POST /api/clients</code>
+                  <span>Ajoute un nouveau client</span>
+                </div>
+                <div class="endpoint">
+                  <code>DELETE /api/clients/:id</code>
+                  <span>Supprime un client par son ID</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-card">
+              <h3>🧪 Tests avec cURL</h3>
+              <p>
+                Vous pouvez tester l'API directement depuis la ligne de commande
+                :
+              </p>
+              <div class="code-examples">
+                <div class="code-block">
+                  <h4>Récupérer tous les clients :</h4>
+                  <pre><code>curl http://localhost:3000/api/clients</code></pre>
+                </div>
+                <div class="code-block">
+                  <h4>Ajouter un nouveau client :</h4>
+                  <pre><code>curl -X POST -H "Content-Type: application/json" -d '{"name": "John Doe", "email": "john@example.com"}' http://localhost:3000/api/clients</code></pre>
+                </div>
+                <div class="code-block">
+                  <h4>Supprimer un client :</h4>
+                  <pre><code>curl -X DELETE http://localhost:3000/api/clients/1</code></pre>
+                </div>
+              </div>
+            </div>
+
+            <div class="about-card">
+              <h3>📁 Structure du projet</h3>
+              <pre><code>.
+├── server.js          # Serveur Express principal
+├── package.json       # Dépendances et scripts
+├── public/            # Fichiers statiques
+│   ├── index.html     # Page d'accueil
+│   ├── clients.html   # Gestion des clients
+│   ├── about.html     # Page à propos
+│   └── style.css      # Styles CSS
+└── README.md          # Documentation</code></pre>
+            </div>
+
+            <div class="about-card">
+              <h3>🚀 Démarrage</h3>
+              <p>Pour démarrer l'application :</p>
+              <ol>
+                <li>Installer les dépendances : <code>npm install</code></li>
+                <li>Démarrer le serveur : <code>npm start</code></li>
+                <li>
+                  Ouvrir dans le navigateur : <code>http://localhost:3000</code>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 Gestion des Clients - Développé avec Express.js</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestion des Clients - Liste</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="nav-container">
+          <h1>Gestion des Clients</h1>
+          <ul>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/clients" class="active">Clients</a></li>
+            <li><a href="/about">À propos</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        <section class="clients-section">
+          <h2>Gestion des Clients</h2>
+
+          <!-- Formulaire d'ajout de client -->
+          <div class="form-section">
+            <h3>Ajouter un nouveau client</h3>
+            <form id="addClientForm" class="client-form">
+              <div class="form-group">
+                <label for="name">Nom *</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Téléphone</label>
+                <input type="tel" id="phone" name="phone" />
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Ajouter le client
+              </button>
+            </form>
+          </div>
+
+          <!-- Liste des clients -->
+          <div class="clients-list-section">
+            <h3>Liste des clients</h3>
+            <div id="clientsList" class="clients-list">
+              <p class="loading">Chargement des clients...</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 Gestion des Clients - Développé avec Express.js</p>
+      </div>
+    </footer>
+
+    <script>
+      // Fonction pour charger la liste des clients
+      async function loadClients() {
+        try {
+          const response = await fetch("/api/clients");
+          const clients = await response.json();
+          displayClients(clients);
+        } catch (error) {
+          console.error("Erreur lors du chargement des clients:", error);
+          document.getElementById("clientsList").innerHTML =
+            '<p class="error">Erreur lors du chargement des clients</p>';
+        }
+      }
+
+      // Fonction pour afficher les clients
+      function displayClients(clients) {
+        const clientsList = document.getElementById("clientsList");
+
+        if (clients.length === 0) {
+          clientsList.innerHTML =
+            '<p class="no-clients">Aucun client enregistré</p>';
+          return;
+        }
+
+        const clientsHTML = clients
+          .map(
+            (client) => `
+                <div class="client-card" data-id="${client.id}">
+                    <div class="client-info">
+                        <h4>${client.name}</h4>
+                        <p><strong>Email:</strong> ${client.email}</p>
+                        ${
+                          client.phone
+                            ? `<p><strong>Téléphone:</strong> ${client.phone}</p>`
+                            : ""
+                        }
+                        <p><strong>ID:</strong> ${client.id}</p>
+                    </div>
+                    <button class="btn btn-danger delete-btn" onclick="deleteClient(${
+                      client.id
+                    })">
+                        🗑️ Supprimer
+                    </button>
+                </div>
+            `
+          )
+          .join("");
+
+        clientsList.innerHTML = clientsHTML;
+      }
+
+      // Fonction pour ajouter un client
+      async function addClient(clientData) {
+        try {
+          const response = await fetch("/api/clients", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(clientData),
+          });
+
+          if (response.ok) {
+            const newClient = await response.json();
+            console.log("Client ajouté:", newClient);
+            loadClients(); // Recharger la liste
+            document.getElementById("addClientForm").reset();
+            showMessage("Client ajouté avec succès!", "success");
+          } else {
+            const error = await response.json();
+            showMessage(`Erreur: ${error.error}`, "error");
+          }
+        } catch (error) {
+          console.error("Erreur lors de l'ajout du client:", error);
+          showMessage("Erreur lors de l'ajout du client", "error");
+        }
+      }
+
+      // Fonction pour supprimer un client
+      async function deleteClient(clientId) {
+        if (!confirm("Êtes-vous sûr de vouloir supprimer ce client ?")) {
+          return;
+        }
+
+        try {
+          const response = await fetch(`/api/clients/${clientId}`, {
+            method: "DELETE",
+          });
+
+          if (response.ok) {
+            console.log("Client supprimé avec succès");
+            loadClients(); // Recharger la liste
+            showMessage("Client supprimé avec succès!", "success");
+          } else {
+            const error = await response.json();
+            showMessage(`Erreur: ${error.error}`, "error");
+          }
+        } catch (error) {
+          console.error("Erreur lors de la suppression du client:", error);
+          showMessage("Erreur lors de la suppression du client", "error");
+        }
+      }
+
+      // Fonction pour afficher des messages
+      function showMessage(message, type) {
+        const messageDiv = document.createElement("div");
+        messageDiv.className = `message ${type}`;
+        messageDiv.textContent = message;
+
+        document.body.appendChild(messageDiv);
+
+        setTimeout(() => {
+          messageDiv.remove();
+        }, 3000);
+      }
+
+      // Gestionnaire du formulaire
+      document
+        .getElementById("addClientForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const formData = new FormData(this);
+          const clientData = {
+            name: formData.get("name"),
+            email: formData.get("email"),
+            phone: formData.get("phone"),
+          };
+
+          addClient(clientData);
+        });
+
+      // Charger les clients au chargement de la page
+      document.addEventListener("DOMContentLoaded", loadClients);
+    </script>
+  </body>
+</html>
