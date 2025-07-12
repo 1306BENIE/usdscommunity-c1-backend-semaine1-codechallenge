@@ -7,19 +7,6 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
-      <nav>
-        <div class="nav-container">
-          <h1>Gestion des Clients</h1>
-          <ul>
-            <li><a href="/">Accueil</a></li>
-            <li><a href="/clients" class="active">Clients</a></li>
-            <li><a href="/about">À propos</a></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-
     <main>
       <div class="container">
         <section class="clients-section">
@@ -57,12 +44,6 @@
         </section>
       </div>
     </main>
-
-    <footer>
-      <div class="container">
-        <p>&copy; 2024 Gestion des Clients - Développé avec Express.js</p>
-      </div>
-    </footer>
 
     <script>
       // Fonction pour charger la liste des clients
@@ -199,5 +180,8 @@
       // Charger les clients au chargement de la page
       document.addEventListener("DOMContentLoaded", loadClients);
     </script>
+
+    <script src="navbar.js"></script>
+    <script src="footer.js"></script>
   </body>
 </html>

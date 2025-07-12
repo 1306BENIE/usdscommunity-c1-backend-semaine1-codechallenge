@@ -20,6 +20,16 @@ app.get("/about", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "about.html"));
 });
 
+// Servir le fichier navbar.js
+app.get("/navbar.js", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "navbar.js"));
+});
+
+// Servir le fichier footer.js
+app.get("/footer.js", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "footer.js"));
+});
+
 // Servir le fichier CSS
 app.get("/style.css", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "style.css"));

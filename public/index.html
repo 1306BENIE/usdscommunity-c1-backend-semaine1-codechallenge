@@ -3,67 +3,244 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gestion des Clients - Accueil</title>
+    <title>Gestion des Clients - Dashboard Moderne</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <header>
-      <nav>
-        <div class="nav-container">
-          <h1>Gestion des Clients</h1>
-          <ul>
-            <li><a href="/" class="active">Accueil</a></li>
-            <li><a href="/clients">Clients</a></li>
-            <li><a href="/about">À propos</a></li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-
     <main>
-      <div class="container">
-        <section class="hero">
-          <h2>Bienvenue dans votre application de gestion des clients</h2>
-          <p>
-            Une solution simple et efficace pour gérer vos clients en toute
-            simplicité.
-          </p>
-          <div class="cta-buttons">
-            <a href="/clients" class="btn btn-primary">Gérer les clients</a>
-            <a href="/about" class="btn btn-secondary">En savoir plus</a>
+      <!-- Hero Section avec Animation -->
+      <section class="hero-premium">
+        <div class="hero-background">
+          <div class="particles"></div>
+          <div class="gradient-overlay"></div>
+        </div>
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="hero-title">
+              <span class="title-line">Gestion des Clients</span>
+              <span class="title-subtitle">Plateforme Moderne</span>
+            </h1>
+            <p class="hero-description">
+              Une solution élégante et performante pour gérer vos clients en
+              toute simplicité. Interface intuitive, API robuste, design
+              moderne.
+            </p>
+            <div class="hero-actions">
+              <a href="/clients" class="btn btn-primary btn-hero">
+                <span>Commencer</span>
+                <svg class="btn-icon" viewBox="0 0 24 24">
+                  <path
+                    d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+                  />
+                </svg>
+              </a>
+              <a href="/about" class="btn btn-secondary btn-hero">
+                <span>Découvrir</span>
+              </a>
+            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section class="features">
-          <h3>Fonctionnalités principales</h3>
-          <div class="features-grid">
-            <div class="feature-card">
-              <h4>📋 Liste des clients</h4>
-              <p>Consultez facilement tous vos clients enregistrés</p>
+      <!-- Section Statistiques -->
+      <section class="stats-section">
+        <div class="container">
+          <div class="stats-grid">
+            <div class="stat-card" data-stat="clients">
+              <div class="stat-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63A1.5 1.5 0 0 0 18.54 8H17c-.8 0-1.54.37-2.01 1l-1.7 2.26A6.003 6.003 0 0 0 10 16v6h10z"
+                  />
+                  <path
+                    d="M8 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm6 18v-6H8v6h6z"
+                  />
+                </svg>
+              </div>
+              <div class="stat-content">
+                <h3 class="stat-number" data-target="0">0</h3>
+                <p class="stat-label">Clients Actifs</p>
+              </div>
+              <div class="stat-trend positive">
+                <svg viewBox="0 0 24 24">
+                  <path d="M7 14l5-5 5 5z" />
+                </svg>
+                <span>+12%</span>
+              </div>
             </div>
-            <div class="feature-card">
-              <h4>➕ Ajouter un client</h4>
-              <p>Ajoutez de nouveaux clients en quelques clics</p>
+
+            <div class="stat-card" data-stat="api">
+              <div class="stat-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                  />
+                </svg>
+              </div>
+              <div class="stat-content">
+                <h3 class="stat-number" data-target="3">0</h3>
+                <p class="stat-label">Endpoints API</p>
+              </div>
+              <div class="stat-trend stable">
+                <svg viewBox="0 0 24 24">
+                  <path d="M19 13H5v-2h14v2z" />
+                </svg>
+                <span>100%</span>
+              </div>
             </div>
-            <div class="feature-card">
-              <h4>🗑️ Supprimer un client</h4>
-              <p>Supprimez les clients que vous ne souhaitez plus conserver</p>
-            </div>
-            <div class="feature-card">
-              <h4>🔌 API REST</h4>
-              <p>
-                Interface programmatique pour intégrer avec d'autres systèmes
-              </p>
+
+            <div class="stat-card" data-stat="performance">
+              <div class="stat-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M13 2.05v3.03c3.39.49 6 3.39 6 6.92 0 .9-.18 1.75-.5 2.54l2.6 1.53c.56-1.24.9-2.62.9-4.07 0-5.18-3.95-9.45-9-9.95zM12 19c-3.87 0-7-3.13-7-7 0-3.53 2.61-6.43 6-6.92V2.05c-5.06.5-9 4.76-9 9.95 0 5.52 4.47 10 9.99 10 3.31 0 6.24-1.61 8.06-4.09l-2.6-1.53C16.17 17.98 14.21 19 12 19z"
+                  />
+                </svg>
+              </div>
+              <div class="stat-content">
+                <h3 class="stat-number" data-target="99">0</h3>
+                <p class="stat-label">% Performance</p>
+              </div>
+              <div class="stat-trend positive">
+                <svg viewBox="0 0 24 24">
+                  <path d="M7 14l5-5 5 5z" />
+                </svg>
+                <span>+5%</span>
+              </div>
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
+
+      <!-- Section Features -->
+      <section class="features-premium">
+        <div class="container">
+          <div class="section-header">
+            <h2>Fonctionnalités Avancées</h2>
+            <p>
+              Une expérience utilisateur exceptionnelle avec des outils
+              puissants
+            </p>
+          </div>
+
+          <div class="features-grid">
+            <div class="feature-card-premium" data-feature="api">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2zm4-8H9V5h10v2z"
+                  />
+                </svg>
+              </div>
+              <h3>API REST Complète</h3>
+              <p>
+                Interface programmatique robuste avec endpoints GET, POST,
+                DELETE pour une intégration parfaite.
+              </p>
+              <div class="feature-meta">
+                <span class="feature-tag">JSON</span>
+                <span class="feature-tag">HTTP</span>
+                <span class="feature-tag">REST</span>
+              </div>
+            </div>
+
+            <div class="feature-card-premium" data-feature="ui">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                  />
+                </svg>
+              </div>
+              <h3>Interface Moderne</h3>
+              <p>
+                Design responsive et élégant avec animations fluides et
+                micro-interactions pour une expérience premium.
+              </p>
+              <div class="feature-meta">
+                <span class="feature-tag">Responsive</span>
+                <span class="feature-tag">CSS3</span>
+                <span class="feature-tag">Animations</span>
+              </div>
+            </div>
+
+            <div class="feature-card-premium" data-feature="security">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"
+                  />
+                </svg>
+              </div>
+              <h3>Validation Robuste</h3>
+              <p>
+                Système de validation avancé avec gestion d'erreurs appropriée
+                et messages informatifs.
+              </p>
+              <div class="feature-meta">
+                <span class="feature-tag">Validation</span>
+                <span class="feature-tag">Sécurité</span>
+                <span class="feature-tag">Erreurs</span>
+              </div>
+            </div>
+
+            <div class="feature-card-premium" data-feature="performance">
+              <div class="feature-icon">
+                <svg viewBox="0 0 24 24">
+                  <path
+                    d="M13 2.05v3.03c3.39.49 6 3.39 6 6.92 0 .9-.18 1.75-.5 2.54l2.6 1.53c.56-1.24.9-2.62.9-4.07 0-5.18-3.95-9.45-9-9.95zM12 19c-3.87 0-7-3.13-7-7 0-3.53 2.61-6.43 6-6.92V2.05c-5.06.5-9 4.76-9 9.95 0 5.52 4.47 10 9.99 10 3.31 0 6.24-1.61 8.06-4.09l-2.6-1.53C16.17 17.98 14.21 19 12 19z"
+                  />
+                </svg>
+              </div>
+              <h3>Performance Optimale</h3>
+              <p>
+                Architecture légère et efficace avec stockage en mémoire pour
+                des performances exceptionnelles.
+              </p>
+              <div class="feature-meta">
+                <span class="feature-tag">Rapide</span>
+                <span class="feature-tag">Léger</span>
+                <span class="feature-tag">Efficace</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
-    <footer>
-      <div class="container">
-        <p>&copy; 2024 Gestion des Clients - Développé avec Express.js</p>
-      </div>
-    </footer>
+    <script src="navbar.js"></script>
+    <script src="footer.js"></script>
+    <script src="dashboard.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".stat-card").forEach((card) => {
+          // Récupère les éléments existants
+          const icon = card.querySelector(".stat-icon");
+          const number = card.querySelector(".stat-number");
+          const label = card.querySelector(".stat-label");
+          const trend = card.querySelector(".stat-trend");
+
+          // Crée la nouvelle structure
+          const rowTop = document.createElement("div");
+          rowTop.className = "stat-row stat-row-top";
+          if (icon) rowTop.appendChild(icon);
+          if (number) rowTop.appendChild(number);
+
+          const rowBottom = document.createElement("div");
+          rowBottom.className = "stat-row stat-row-bottom";
+          if (label) rowBottom.appendChild(label);
+          if (trend) rowBottom.appendChild(trend);
+
+          // Vide la carte et insère la nouvelle structure
+          card.innerHTML = "";
+          card.appendChild(rowTop);
+          card.appendChild(rowBottom);
+        });
+      });
+    </script>
   </body>
 </html>
