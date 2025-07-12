@@ -1807,3 +1807,416 @@ footer {
     padding: 0.7rem 0.5rem;
   }
 }
+
+/* ===== PAGE ABOUT PREMIUM ===== */
+
+/* Section About Premium */
+.about-section {
+  padding: 3rem 0;
+  position: relative;
+}
+
+.about-section h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 3rem;
+  background: linear-gradient(45deg, #00d4ff, #ff6b6b, #4ecdc4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+}
+
+.about-content {
+  display: grid;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Cartes About Premium */
+.about-card-premium {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 2.5rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-card-premium::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 212, 255, 0.05) 0%,
+    rgba(255, 107, 107, 0.05) 50%,
+    rgba(78, 205, 196, 0.05) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.about-card-premium:hover::before {
+  opacity: 1;
+}
+
+.about-card-premium:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 212, 255, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(0, 212, 255, 0.2);
+}
+
+/* Titres avec icônes */
+.about-card-premium h3 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.about-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.about-card-premium:hover .about-icon {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 8px 20px rgba(0, 212, 255, 0.3);
+}
+
+.about-icon svg {
+  width: 24px;
+  height: 24px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Texte descriptif */
+.about-desc-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #e0e0e0;
+  margin-bottom: 0;
+}
+
+/* Liste des technologies */
+.tech-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0;
+}
+
+.tech-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: #e0e0e0;
+  flex-wrap: wrap;
+}
+
+/* Badges technologiques */
+.tech-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.tech-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 212, 255, 0.3);
+  border-color: rgba(0, 212, 255, 0.5);
+}
+
+.tech-badge svg {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Endpoints API */
+.api-endpoints {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.endpoint-premium {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.endpoint-premium:hover {
+  transform: translateX(5px);
+  border-color: rgba(0, 212, 255, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 212, 255, 0.2);
+}
+
+.endpoint-method {
+  padding: 0.3rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  min-width: 60px;
+  text-align: center;
+}
+
+.endpoint-method.get {
+  background: linear-gradient(45deg, #4ecdc4, #44a08d);
+  color: #ffffff;
+}
+
+.endpoint-method.post {
+  background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+  color: #ffffff;
+}
+
+.endpoint-method.delete {
+  background: linear-gradient(45deg, #f7b731, #e17055);
+  color: #ffffff;
+}
+
+.endpoint-premium code {
+  font-family: "Fira Code", "Monaco", "Consolas", monospace;
+  background: rgba(0, 212, 255, 0.1);
+  color: #00d4ff;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.endpoint-desc {
+  color: #b0b0b0;
+  font-size: 0.9rem;
+  margin-left: auto;
+}
+
+/* Blocs de code */
+.code-examples {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.code-block-premium {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.code-block-premium:hover {
+  border-color: rgba(0, 212, 255, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 212, 255, 0.2);
+}
+
+.code-block-premium h4 {
+  background: rgba(0, 212, 255, 0.1);
+  color: #00d4ff;
+  padding: 1rem 1.5rem;
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.code-block-premium pre {
+  margin: 0;
+  padding: 1.5rem;
+  background: transparent;
+  overflow-x: auto;
+}
+
+.code-block-premium code {
+  font-family: "Fira Code", "Monaco", "Consolas", monospace;
+  color: #e0e0e0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+/* Structure du projet */
+.project-structure {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 0;
+  overflow-x: auto;
+  font-family: "Fira Code", "Monaco", "Consolas", monospace;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.project-structure:hover {
+  border-color: rgba(0, 212, 255, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 212, 255, 0.2);
+}
+
+.project-structure code {
+  color: #00d4ff;
+  background: transparent;
+  padding: 0;
+  border: none;
+  font-size: inherit;
+}
+
+/* Liste ordonnée pour le démarrage */
+.about-card-premium ol {
+  margin: 1rem 0 0 0;
+  padding-left: 1.5rem;
+}
+
+.about-card-premium ol li {
+  color: #e0e0e0;
+  margin-bottom: 0.8rem;
+  line-height: 1.6;
+}
+
+.about-card-premium ol li code {
+  background: rgba(0, 212, 255, 0.1);
+  color: #00d4ff;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+/* Paragraphes généraux */
+.about-card-premium p {
+  color: #e0e0e0;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.about-card-premium p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .about-card-premium {
+    padding: 1.5rem;
+  }
+
+  .about-card-premium h3 {
+    font-size: 1.3rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .about-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .about-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .tech-list {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .tech-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .endpoint-premium {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .endpoint-desc {
+    margin-left: 0;
+  }
+
+  .code-block-premium pre {
+    padding: 1rem;
+  }
+
+  .project-structure {
+    padding: 1rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Focus visible pour l'accessibilité */
+.about-card-premium:focus-visible {
+  outline: 2px solid #00d4ff;
+  outline-offset: 2px;
+}
+
+.tech-badge:focus-visible {
+  outline: 2px solid #00d4ff;
+  outline-offset: 2px;
+}
+
+.endpoint-premium:focus-visible {
+  outline: 2px solid #00d4ff;
+  outline-offset: 2px;
+}
+
+.code-block-premium:focus-visible {
+  outline: 2px solid #00d4ff;
+  outline-offset: 2px;
+}

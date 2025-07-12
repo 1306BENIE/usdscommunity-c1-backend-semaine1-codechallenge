@@ -13,74 +13,371 @@
           <h2>À propos de l'application</h2>
 
           <div class="about-content">
-            <div class="about-card">
-              <h3>📋 Description</h3>
-              <p>
+            <div class="about-card-premium">
+              <h3>
+                <span class="about-icon" aria-hidden="true"
+                  ><svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect
+                      x="3"
+                      y="4"
+                      width="18"
+                      height="16"
+                      rx="3"
+                      fill="#00d4ff"
+                    />
+                    <rect
+                      x="7"
+                      y="8"
+                      width="10"
+                      height="2"
+                      rx="1"
+                      fill="#fff"
+                    />
+                    <rect
+                      x="7"
+                      y="12"
+                      width="7"
+                      height="2"
+                      rx="1"
+                      fill="#fff"
+                    /></svg
+                ></span>
+                Description
+              </h3>
+              <p class="about-desc-text">
                 Cette application de gestion des clients est une solution simple
                 et efficace développée avec Express.js. Elle permet de gérer une
                 liste de clients avec des opérations CRUD basiques.
               </p>
             </div>
 
-            <div class="about-card">
-              <h3>🛠️ Technologies utilisées</h3>
-              <ul>
-                <li><strong>Backend:</strong> Node.js avec Express.js</li>
+            <div class="about-card-premium">
+              <h3>
+                <span class="about-icon" aria-hidden="true"
+                  ><svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <g>
+                      <rect
+                        x="2"
+                        y="2"
+                        width="20"
+                        height="20"
+                        rx="5"
+                        fill="#764ba2"
+                      />
+                      <path
+                        d="M7 17l5-5 5 5"
+                        stroke="#fff"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </g></svg
+                ></span>
+                Technologies utilisées
+              </h3>
+              <ul class="tech-list">
                 <li>
-                  <strong>Frontend:</strong> HTML5, CSS3, JavaScript vanilla
+                  <span class="tech-badge"
+                    ><svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <circle cx="12" cy="12" r="12" fill="#393" />
+                      <text
+                        x="6"
+                        y="16"
+                        font-size="10"
+                        font-family="Arial"
+                        fill="#fff"
+                      >
+                        Node
+                      </text>
+                    </svg>
+                    Node.js</span
+                  >
+                  avec
+                  <span class="tech-badge"
+                    ><svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <rect
+                        x="2"
+                        y="2"
+                        width="20"
+                        height="20"
+                        rx="5"
+                        fill="#222"
+                      />
+                      <text
+                        x="4"
+                        y="16"
+                        font-size="10"
+                        font-family="Arial"
+                        fill="#fff"
+                      >
+                        Express
+                      </text>
+                    </svg>
+                    Express.js</span
+                  >
                 </li>
-                <li><strong>Stockage:</strong> Mémoire (tableau JavaScript)</li>
-                <li><strong>API:</strong> REST JSON</li>
+                <li>
+                  <span class="tech-badge"
+                    ><svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <rect
+                        x="2"
+                        y="2"
+                        width="20"
+                        height="20"
+                        rx="5"
+                        fill="#2965f1"
+                      />
+                      <text
+                        x="4"
+                        y="16"
+                        font-size="10"
+                        font-family="Arial"
+                        fill="#fff"
+                      >
+                        HTML5
+                      </text>
+                    </svg>
+                    HTML5</span
+                  >,
+                  <span class="tech-badge"
+                    ><svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <rect
+                        x="2"
+                        y="2"
+                        width="20"
+                        height="20"
+                        rx="5"
+                        fill="#264de4"
+                      />
+                      <text
+                        x="4"
+                        y="16"
+                        font-size="10"
+                        font-family="Arial"
+                        fill="#fff"
+                      >
+                        CSS3
+                      </text>
+                    </svg>
+                    CSS3</span
+                  >,
+                  <span class="tech-badge"
+                    ><svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <rect
+                        x="2"
+                        y="2"
+                        width="20"
+                        height="20"
+                        rx="5"
+                        fill="#f7df1e"
+                      />
+                      <text
+                        x="4"
+                        y="16"
+                        font-size="10"
+                        font-family="Arial"
+                        fill="#222"
+                      >
+                        JS
+                      </text>
+                    </svg>
+                    JavaScript</span
+                  >
+                </li>
+                <li>
+                  <span class="tech-badge"
+                    ><svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <rect
+                        x="2"
+                        y="2"
+                        width="20"
+                        height="20"
+                        rx="5"
+                        fill="#00d4ff"
+                      />
+                      <text
+                        x="4"
+                        y="16"
+                        font-size="10"
+                        font-family="Arial"
+                        fill="#fff"
+                      >
+                        RAM
+                      </text>
+                    </svg>
+                    Mémoire</span
+                  >
+                  (tableau JavaScript)
+                </li>
+                <li>
+                  <span class="tech-badge"
+                    ><svg
+                      width="18"
+                      height="18"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <rect
+                        x="2"
+                        y="2"
+                        width="20"
+                        height="20"
+                        rx="5"
+                        fill="#4ecdc4"
+                      />
+                      <text
+                        x="4"
+                        y="16"
+                        font-size="10"
+                        font-family="Arial"
+                        fill="#222"
+                      >
+                        API
+                      </text>
+                    </svg>
+                    REST JSON</span
+                  >
+                </li>
               </ul>
             </div>
 
-            <div class="about-card">
-              <h3>🔌 API REST</h3>
+            <div class="about-card-premium">
+              <h3>
+                <span class="about-icon" aria-hidden="true"
+                  ><svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect
+                      x="2"
+                      y="2"
+                      width="20"
+                      height="20"
+                      rx="5"
+                      fill="#00d4ff"
+                    />
+                    <path
+                      d="M8 12h8M12 8v8"
+                      stroke="#fff"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    /></svg
+                ></span>
+                API REST
+              </h3>
               <p>
                 L'application expose une API REST complète pour la gestion des
                 clients :
               </p>
               <div class="api-endpoints">
-                <div class="endpoint">
-                  <code>GET /api/clients</code>
-                  <span>Récupère la liste complète des clients</span>
+                <div class="endpoint-premium">
+                  <span class="endpoint-method get">GET</span>
+                  <code>/api/clients</code>
+                  <span class="endpoint-desc"
+                    >Récupère la liste complète des clients</span
+                  >
                 </div>
-                <div class="endpoint">
-                  <code>POST /api/clients</code>
-                  <span>Ajoute un nouveau client</span>
+                <div class="endpoint-premium">
+                  <span class="endpoint-method post">POST</span>
+                  <code>/api/clients</code>
+                  <span class="endpoint-desc">Ajoute un nouveau client</span>
                 </div>
-                <div class="endpoint">
-                  <code>DELETE /api/clients/:id</code>
-                  <span>Supprime un client par son ID</span>
+                <div class="endpoint-premium">
+                  <span class="endpoint-method delete">DELETE</span>
+                  <code>/api/clients/:id</code>
+                  <span class="endpoint-desc"
+                    >Supprime un client par son ID</span
+                  >
                 </div>
               </div>
             </div>
 
-            <div class="about-card">
-              <h3>🧪 Tests avec cURL</h3>
+            <div class="about-card-premium">
+              <h3>
+                <span class="about-icon" aria-hidden="true"
+                  ><svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect
+                      x="2"
+                      y="2"
+                      width="20"
+                      height="20"
+                      rx="5"
+                      fill="#27ae60"
+                    />
+                    <path
+                      d="M8 12h8"
+                      stroke="#fff"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                    <circle cx="12" cy="12" r="3" fill="#fff" /></svg
+                ></span>
+                Tests avec cURL
+              </h3>
               <p>
                 Vous pouvez tester l'API directement depuis la ligne de commande
                 :
               </p>
               <div class="code-examples">
-                <div class="code-block">
+                <div class="code-block-premium">
                   <h4>Récupérer tous les clients :</h4>
                   <pre><code>curl http://localhost:3000/api/clients</code></pre>
                 </div>
-                <div class="code-block">
+                <div class="code-block-premium">
                   <h4>Ajouter un nouveau client :</h4>
                   <pre><code>curl -X POST -H "Content-Type: application/json" -d '{"name": "John Doe", "email": "john@example.com"}' http://localhost:3000/api/clients</code></pre>
                 </div>
-                <div class="code-block">
+                <div class="code-block-premium">
                   <h4>Supprimer un client :</h4>
                   <pre><code>curl -X DELETE http://localhost:3000/api/clients/1</code></pre>
                 </div>
               </div>
             </div>
 
-            <div class="about-card">
-              <h3>📁 Structure du projet</h3>
-              <pre><code>.
+            <div class="about-card-premium">
+              <h3>
+                <span class="about-icon" aria-hidden="true"
+                  ><svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect
+                      x="2"
+                      y="2"
+                      width="20"
+                      height="20"
+                      rx="5"
+                      fill="#f7b731"
+                    />
+                    <path d="M8 8h8v8H8z" fill="#fff" /></svg
+                ></span>
+                Structure du projet
+              </h3>
+              <pre class="project-structure"><code>.
 ├── server.js          # Serveur Express principal
 ├── package.json       # Dépendances et scripts
 ├── public/            # Fichiers statiques
@@ -91,8 +388,27 @@
 └── README.md          # Documentation</code></pre>
             </div>
 
-            <div class="about-card">
-              <h3>🚀 Démarrage</h3>
+            <div class="about-card-premium">
+              <h3>
+                <span class="about-icon" aria-hidden="true"
+                  ><svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <rect
+                      x="2"
+                      y="2"
+                      width="20"
+                      height="20"
+                      rx="5"
+                      fill="#00d4ff"
+                    />
+                    <path
+                      d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+                      stroke="#fff"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    /></svg
+                ></span>
+                Démarrage
+              </h3>
               <p>Pour démarrer l'application :</p>
               <ol>
                 <li>Installer les dépendances : <code>npm install</code></li>
